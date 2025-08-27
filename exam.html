@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Emergency Hotline</title>
+</head>
+<body class="bg-gray-100 p-6">
+  <h1 class="text-3xl font-bold text-center mb-6">🚨 Emergency Hotline</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    <!-- Left side: Hotline Cards -->
+    <div class="space-y-4">
+      <div class="p-4 bg-white rounded-xl shadow flex justify-between items-center">
+        <span class="font-semibold">🚓 Police (999)</span>
+        <button onclick="makeCall('999')" class="bg-green-600 text-white px-4 py-2 rounded-lg">Call</button>
+      </div>
+      <div class="p-4 bg-white rounded-xl shadow flex justify-between items-center">
+        <span class="font-semibold">🚑 Ambulance (16263)</span>
+        <button onclick="makeCall('16263')" class="bg-green-600 text-white px-4 py-2 rounded-lg">Call</button>
+      </div>
+      <div class="p-4 bg-white rounded-xl shadow flex justify-between items-center">
+        <span class="font-semibold">🔥 Fire Service (102)</span>
+        <button onclick="makeCall('102')" class="bg-green-600 text-white px-4 py-2 rounded-lg">Call</button>
+      </div>
+      <div class="p-4 bg-white rounded-xl shadow flex justify-between items-center">
+        <span class="font-semibold">🚺 Women & Child Helpline (109)</span>
+        <button onclick="makeCall('109')" class="bg-green-600 text-white px-4 py-2 rounded-lg">Call</button>
+      </div>
+    </div>
+
+    <!-- Right side: Call Info -->
+    <div class="p-6 bg-white rounded-xl shadow space-y-4">
+      <h2 class="text-xl font-bold">📞 Call Information</h2>
+      <p><strong>Number:</strong> <span id="call-number">--</span></p>
+      <p><strong>Time:</strong> <span id="call-time">--</span></p>
+      
+      <button onclick="clearInfo()" class="bg-red-500 text-white px-6 py-2 rounded-lg">Clear</button>
+    </div>
+
+  </div>
+
+  <script>
+    function makeCall(number) {
+      document.getElementById('call-number').innerText = number;
+      document.getElementById('call-time').innerText = new Date().toLocaleTimeString();
+    }
+
+    function clearInfo() {
+      document.getElementById('call-number').innerText = "--";
+      document.getElementById('call-time').innerText = "--";
+    }
+  </script>
+</body>
+</html>
+cdn.tailwindcss.com
